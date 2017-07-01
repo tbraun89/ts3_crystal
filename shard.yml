@@ -1,0 +1,9 @@
+name: ts3_crystal
+version: 0.1.0
+
+authors:
+  - Torsten Braun <torsten.braun@hex00r.de>
+
+crystal: 0.23.0
+
+license: MIT
