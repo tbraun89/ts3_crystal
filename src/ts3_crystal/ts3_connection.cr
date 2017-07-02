@@ -1,7 +1,7 @@
 
-# require "net/telnet" TODO
+require "socket"
+
 require "./errors"
-# require 'ts3query/query_options'
 require "./escaping"
 
 module Ts3Query
@@ -13,7 +13,9 @@ module Ts3Query
     end
 
     def disconnect
-      # @connection.close TODO
+      @connection.try do |connection|
+        connection.close
+      end
     end
 
     macro method_missing(call)
