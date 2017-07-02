@@ -12,13 +12,13 @@ module Ts3Crystal
             connection << "login client_login_name=#{params[:username]} client_login_password=#{params[:password]}\n"
             response = connection.gets.unsafe_as(String).strip
 
-            unless response == "error id=0 msg=ok"
+            unless response == ERROR_OK
               connection.close
-              raise Exception.new("Username and password do not match, login failed.") # TODO custom erro
+              raise Ts3Crystal::ConnectionRefused.new("Username and password do not match, login failed.")
             end
           else
             connection.close
-            raise Exception.new("No Teamspeak 3 server found.") # TODO custom error
+            raise Ts3Crystal::ConnectionRefused.new("No Teamspeak 3 server found.")
           end
         end
       rescue
