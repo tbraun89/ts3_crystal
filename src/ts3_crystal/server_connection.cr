@@ -5,7 +5,7 @@ module Ts3Crystal
     private def connect(params : Hash(Symbol, String))
       # TODO implement telnet interface
       puts "not implemented"
-      @connection = nil
+      # TODO @connection = 
     end
   end
 end

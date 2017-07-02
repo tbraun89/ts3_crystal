@@ -1,6 +1,6 @@
 
 # require "net/telnet" TODO
-# require 'ts3query/errors'
+require "./errors"
 # require 'ts3query/query_options'
 require "./escaping"
 
@@ -13,7 +13,7 @@ module Ts3Query
     end
 
     def disconnect
-      @connection.close
+      # @connection.close TODO
     end
 
     macro method_missing(call)
@@ -25,7 +25,7 @@ module Ts3Query
         elsif arguments[0].is_a?(Array(Symbol))
           exec_command({{call.name.id.stringify}}, {} of Symbol => String, arguments[0])
         else
-          # TODO error
+          raise Ts3Crystal::WrongArgumentType.new("This method accepts either Hash(Symbol, String) or Array(Symbol).")
         end
       elsif arguments.size == 2
         if arguments[0].is_a?(Hash(Symbol, String)) && arguments[1].is_a?(Array(Symbol))
@@ -33,10 +33,10 @@ module Ts3Query
         elsif arguments[0].is_a?(Array(Symbol)) && arguments[1].is_a?(Hash(Symbol, String))
           exec_command({{call.name.id.stringify}}, arguments[1], arguments[0])
         else
-          # TODO error
+          raise Ts3Crystal::WrongArgumentType.new("This method accepts either Hash(Symbol, String) or Array(Symbol).")
         end
       elsif arguments.size > 2
-        # TODO error
+        raise Ts3Crystal::WrongArgumentCount.new("This method accepts none, one or tow arguments.")
       else
         exec_command({{call.name.id.stringify}})
       end
