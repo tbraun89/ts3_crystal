@@ -2,16 +2,16 @@ module Ts3Crystal
   module Escaping
     DECODER_PATTERNS = {
       "\\\\" => "\\",
-      "\\/"   => "/",
-      "\\s"   => " ",
-      "\\p"   => "|",
-      "\\a"   => "\\a",
-      "\\b"   => "\\b",
-      "\\f"   => "\\f",
-      "\\n"   => "\\n",
-      "\\r"   => "\\r",
-      "\\t"   => "\\t",
-      "\\v"   => "\\v",
+      "\\/"  => "/",
+      "\\s"  => " ",
+      "\\p"  => "|",
+      #"\\a"  => "\a", FIXME \a and \b do not work with Crystal strings
+      #"\\b"  => "\b",
+      "\\f"  => "\f",
+      "\\n"  => "\n",
+      "\\r"  => "\r",
+      "\\t"  => "\t",
+      "\\v"  => "\v",
     }
 
     ENCODER_PATTERNS = DECODER_PATTERNS.invert

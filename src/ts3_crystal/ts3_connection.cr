@@ -1,4 +1,3 @@
-
 require "socket"
 
 require "./errors"
@@ -64,10 +63,29 @@ module Ts3Query
         data : String = connection.gets.unsafe_as(String).strip
         error : String = connection.gets.unsafe_as(String).strip
 
-        if error == ERROR_OK
-          # TODO create result hash
+        if error == ERROR_OK && !data.empty?
+          parse_result("#{error}|#{data}")
+        else
+          parse_result(error)
         end
       end
+    end
+
+    private def parse_result(data : String)
+      result = [] of Hash(String, String)
+
+      data.split("|").each do |row|
+        row_result = {} of String => String
+
+        row.split(" ").each do |element|
+          element_result = element.split("=")
+          row_result[element_result[0]] = element_result[1] if element_result.size > 1
+        end
+
+        result << row_result
+      end
+
+      result
     end
   end
 end
