@@ -5,8 +5,8 @@ module Ts3Crystal
       "\\/"  => "/",
       "\\s"  => " ",
       "\\p"  => "|",
-      #"\\a"  => "\a", FIXME \a and \b do not work with Crystal strings
-      #"\\b"  => "\b",
+      "\\a"  => "\007",
+      "\\b"  => "\008",
       "\\f"  => "\f",
       "\\n"  => "\n",
       "\\r"  => "\r",

@@ -5,7 +5,9 @@ describe Ts3Crystal::Escaping do
     "TeamSpeak ]|[ Server" => "TeamSpeak\\s]\\p[\\sServer",
     "Test token with custom set" => "Test\\stoken\\swith\\scustom\\sset",
     "ident=forum_user value=Sven Paulsen|ident=forum_id value=123" => "ident=forum_user\\svalue=Sven\\sPaulsen\\pident=forum_id\\svalue=123",
-    "\\/ |\f\n\r\t\v" => "\\\\\\/\\s\\p\\f\\n\\r\\t\\v"
+    "\\/ |\f\n\r\t\v" => "\\\\\\/\\s\\p\\f\\n\\r\\t\\v",
+    "a" => "a", # bell
+    "b" => "b", # backspace
   }
   decode_example = encode_example.invert
 
