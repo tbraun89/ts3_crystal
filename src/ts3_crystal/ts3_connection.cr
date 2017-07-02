@@ -58,7 +58,7 @@ module Ts3Query
         query_string += " -#{value}"
       end
 
-      (@connection.unsafe_as(TCPSocket)).try do |connection|
+      @connection.try do |connection|
         connection << "#{query_string}\n"
         data : String = connection.gets.unsafe_as(String).strip
         error : String = connection.gets.unsafe_as(String).strip

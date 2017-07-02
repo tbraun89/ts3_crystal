@@ -1,5 +1,5 @@
 require "./ts3_crystal/server_connection"
-#require "./ts3_crystal/client_connection"
+require "./ts3_crystal/client_connection"
 
 module Ts3Crystal
   DEFAULT_SERVER_PARAMS = {
@@ -18,7 +18,6 @@ module Ts3Crystal
   end
 
   def self.client_connect(params = {} of Symbol => String)
-    puts "OK"
-    #ClientConnection.new DEFAULT_CLIENT_PARAMS.merge(params)
+    ClientConnection.new DEFAULT_CLIENT_PARAMS.merge(params)
   end
 end
