@@ -1,5 +1,7 @@
 # ts3_crystal
 
+⚠️ THIS IS EARLY DEVELOPMENT AND NOT FOR USE AT THE MOMENT ⚠️
+
 Wrapper for the Teamspeak 3 Query Language.
 
 ## Installation
