@@ -1,2 +1,4 @@
-sudo: required
+sudo: enabled
 language: crystal
+before_install:
+  - sudo apt-key adv --keyserver keys.gnupg.net --recv-keys A4EBAC6667697DD2
