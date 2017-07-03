@@ -1,4 +1,10 @@
-sudo: enabled
 language: crystal
+
+# Fix Crystal installation key error (remove workaround, when CI works again)
+sudo: enabled
 before_install:
-- sudo apt-key adv --keyserver keys.gnupg.net --recv-keys A4EBAC6667697DD2
+  - sudo apt-key adv --keyserver keys.gnupg.net --recv-keys A4EBAC6667697DD2
+  - sudo apt-get -qq update
+  - sudo apt-get install -y crystal libgmp-dev libxml2-dev
+  - crystal --version
+  - crystal deps --version
