@@ -5,7 +5,7 @@ dist: xenial
 sudo: enabled
 before_install:
   - sudo apt-key adv --keyserver keys.gnupg.net --recv-keys A4EBAC6667697DD2
-  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
   - sudo apt-get -qq update
   - sudo apt-get install -y crystal libgmp-dev libgmpxx4ldbl libxml2-dev gcc-4.9
   - crystal --version
