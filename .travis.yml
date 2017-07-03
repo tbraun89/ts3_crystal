@@ -5,6 +5,6 @@ sudo: enabled
 before_install:
   - sudo apt-key adv --keyserver keys.gnupg.net --recv-keys A4EBAC6667697DD2
   - sudo apt-get -qq update
-  - sudo apt-get install -y crystal libgmp-dev libgmpxx4ldbl libxml2-dev
+  - sudo apt-get install -y crystal libgmp-dev libgmpxx4ldbl libstdc++6 libxml2-dev
   - crystal --version
   - crystal deps --version
