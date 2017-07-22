@@ -1,12 +1,19 @@
+sudo: enabled
 language: crystal
 dist: xenial
 
-# Fix Crystal installation key error (remove workaround, when CI works again)
-sudo: enabled
+services:
+  - docker
+
 before_install:
+  # Fix Crystal installation key error (remove workaround, when CI works again)
   - sudo apt-key adv --keyserver keys.gnupg.net --recv-keys A4EBAC6667697DD2
   - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
   - sudo apt-get -qq update
   - sudo apt-get install -y crystal libgmp-dev libgmpxx4ldbl libxml2-dev libstdc++-4.9-dev
   - crystal --version
   - crystal deps --version
+
+  # Start a Teamspeak 3 server
+  - docker pull mbentley/teamspeak
+  - docker run -d --name teamspeak -p 9987:9987/udp -p 30033:30033 -p 10011:10011 -p 41144:41144 mbentley/teamspeak serveradmin_password=password
