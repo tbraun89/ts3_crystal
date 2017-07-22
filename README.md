@@ -1,4 +1,8 @@
-# ts3_crystal
+# Ts3Crystal
+
+[![Build Status](https://travis-ci.org/tbraun89/ts3_crystal.svg?branch=master)](https://travis-ci.org/tbraun89/ts3_crystal)
+
+⚠️ THIS IS EARLY DEVELOPMENT AND NOT FOR USE AT THE MOMENT ⚠️
 
 ⚠️ THIS IS EARLY DEVELOPMENT AND NOT FOR USE AT THE MOMENT ⚠️
 
