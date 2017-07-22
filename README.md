@@ -4,6 +4,8 @@
 
 ⚠️ THIS IS EARLY DEVELOPMENT AND NOT FOR USE AT THE MOMENT ⚠️
 
+⚠️ THIS IS EARLY DEVELOPMENT AND NOT FOR USE AT THE MOMENT ⚠️
+
 Wrapper for the Teamspeak 3 Query Language.
 
 ## Installation
